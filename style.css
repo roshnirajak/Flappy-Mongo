@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+body {
+    background-color: #2E2E2E;
+    font-family: Verdana, Tahoma, sans-serif;
+    color: white;
+}
+
+.gameContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: repeat(3, 10vw);
+    grid-template-columns: repeat(3, 10vw);
+}
+
+.box {
+    border: 2px solid white;
+    font-size: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.box:hover {
+    background-color: #404040;
+}
+
+.bt {
+    border-top: 0;
+}
+
+.br {
+    border-right: 0;
+}
+
+.bb {
+    border-bottom: 0;
+}
+
+.bl {
+    border-left: 0;
+}
