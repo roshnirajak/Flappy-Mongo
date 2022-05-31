@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="gameContainer">
         <div class="container">
@@ -22,10 +24,37 @@
             <div class="box bb br"><span class="text"></span></div>
         </div>
         <div class="menu">
-            <button class="restart">Restart</button><br>
-            <span class="info"></span>'s Turn
+            <button id="restart">Restart</button><br>
+            <span id="info"></span>'s Turn
 
         </div>
     </div>
+    <script>
+        let turn = "X";
+
+        //function to change turns
+        const changeTurn = () => {
+            return turn === "X" ? "0" : "X";
+        }
+
+        //function to check winner
+        const checkWin = () => {
+
+        }
+
+        //game logic
+        let boxes = document.getElementsByClassName("box");
+        Array.from(boxes).forEach(element => {
+            let boxtext = element.querySelector('.text');
+            element.addEventListener('click', () => {
+                if (boxtext.innerText === "") {
+                    boxtext.innerText = turn;
+                    changeTurn();
+                    document.getElementById("info")[0].innerText = turn;
+                }
+            })
+        })
+    </script>
 </body>
+
 </html>
