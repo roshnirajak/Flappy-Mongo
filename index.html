@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
-    <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,31 +28,8 @@
 
         </div>
     </div>
-    <script>
-        let turn = "X";
-
-        //function to change turns
-        const changeTurn = () => {
-            return turn === "X" ? "0" : "X";
-        }
-
-        //function to check winner
-        const checkWin = () => {
-
-        }
-
-        //game logic
-        let boxes = document.getElementsByClassName("box");
-        Array.from(boxes).forEach(element => {
-            let boxtext = element.querySelector('.text');
-            element.addEventListener('click', () => {
-                if (boxtext.innerText === "") {
-                    boxtext.innerText = turn;
-                    changeTurn();
-                    document.getElementById("info")[0].innerText = turn;
-                }
-            })
-        })
+    <script src="script.js">
+        
     </script>
 </body>
 
