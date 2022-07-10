@@ -1,49 +1,150 @@
-* {
-    margin: 0;
-    padding: 0
-}
-
 body {
-    background-color: #2E2E2E;
-    font-family: Verdana, Tahoma, sans-serif;
-    color: white;
-}
-
-.gameContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    font-family: 'Questrial', sans-serif;
 }
 
-.container {
+#board {
     display: grid;
-    grid-template-rows: repeat(3, 10vw);
-    grid-template-columns: repeat(3, 10vw);
+    grid-template-columns: 100px 100px 100px;
+    grid-template-rows: 100px 100px 100px;
+    cursor: pointer;
+    position: relative;
 }
 
 .box {
-    border: 2px solid white;
-    font-size: 80px;
+    background-color: rgb(48, 48, 48);
+    color: currentColor;
+    font-size: 3em;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
-.box:hover {
-    background-color: #404040;
+.round-top-left {
+    border-radius: 10px 0px 0px 0px;
 }
 
-.bt {
-    border-top: 0;
+.round-top-right {
+    border-radius: 0px 10px 0px 0px;
 }
 
-.br {
-    border-right: 0;
+.round-bottom-left {
+    border-radius: 10px 0px 0px 10px;
 }
 
-.bb {
-    border-bottom: 0;
+.round-bottom-right {
+    border-radius: 10px 0px 0px 0px;
 }
 
-.bl {
-    border-left: 0;
+.right-border {
+    border-right: 0.2em solid black;
+}
+
+.bottom-border {
+    border-bottom: 0.2em solid black;
+}
+
+.strike {
+    position: absolute;
+    background-color: darkred;
+}
+
+.strike-row-1 {
+    width: 100%;
+    height: 4px;
+    top: 15%;
+}
+
+.strike-row-2 {
+    width: 100%;
+    height: 4px;
+    top: 48%;
+}
+
+.strike-row-3 {
+    width: 100%;
+    height: 4px;
+    top: 83%;
+}
+
+.strike-column-1 {
+    height: 100%;
+    width: 4px;
+    left: 15%;
+}
+
+.strike-column-2 {
+    height: 100%;
+    width: 4px;
+    left: 48%;
+}
+
+.strike-column-3 {
+    height: 100%;
+    width: 4px;
+    left: 83%;
+}
+
+.strike-diagonal-1 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(45deg);
+}
+
+.strike-diagonal-2 {
+    width: 90%;
+    height: 4px;
+    top: 50%;
+    left: 5%;
+    transform: skewY(-45deg);
+}
+
+h1 {
+    color: currentColor;
+}
+
+#game-over-area {
+    text-align: center;
+    border: indigo 8px solid;
+    padding: 50px;
+    width: 50%;
+    margin-top: 50px;
+}
+
+h2 {
+    color: currentColor;
+    font-size: 2em;
+    margin-top: 0px;
+}
+
+button {
+    background-color: transparent;
+    color: currentColor;
+    border: currentColor 1px solid;
+    padding: 10px;
+    font-size: 1.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.x-hover:hover::after {
+    content: "X";
+    opacity: 0.4;
+}
+
+.o-hover:hover::after {
+    content: "O";
+    opacity: 0.4;
 }
