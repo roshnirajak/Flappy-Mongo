@@ -12,7 +12,7 @@ const gameOverArea = document.getElementById("game-over-area");
 const gameOverText = document.getElementById("game-over-text");
 const playAgain = document.getElementById("play-again");
 playAgain.addEventListener("click", startNewGame);
-
+const gameOverSound = new Audio("assets/success.mp3");
 
 boxs.forEach((box) => box.addEventListener("click", boxClick));
 
@@ -89,10 +89,11 @@ function checkWinner() {
 function gameOverScreen(winnerText) {
     let text = "Draw!";
     if (winnerText != null) {
-        text = `Winner is ${winnerText}!`;
+        text = winnerText;
     }
     gameOverArea.className = "visible";
-    gameOverText.innerText = text;
+    gameOverText.innerHTML = "Winner is<br>"+ text + "!";
+    gameOverSound.play();
 }
 
 function startNewGame() {
