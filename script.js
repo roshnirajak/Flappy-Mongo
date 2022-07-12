@@ -89,10 +89,10 @@ function checkWinner() {
 function gameOverScreen(winnerText) {
     let text = "Draw!";
     if (winnerText != null) {
-        text = winnerText;
+        text = `${winnerText} Wins!`;
     }
     gameOverArea.className = "visible";
-    gameOverText.innerHTML = "Winner is<br>"+ text + "!";
+    gameOverText.innerHTML = text;
     gameOverSound.play();
 }
 
