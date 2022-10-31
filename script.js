@@ -1,9 +1,9 @@
-const boxs = document.querySelectorAll(".box");
+const boxes = document.querySelectorAll(".box");
 const PLAYER_X = "X";
 const PLAYER_O = "O";
 let turn = PLAYER_X;
 
-const boardState = Array(boxs.length);
+const boardState = Array(boxes.length);
 boardState.fill(null);
 
 //Elements
@@ -14,18 +14,18 @@ const playAgain = document.getElementById("play-again");
 playAgain.addEventListener("click", startNewGame);
 const gameOverSound = new Audio("assets/success.mp3");
 
-boxs.forEach((box) => box.addEventListener("click", boxClick));
+boxes.forEach((box) => box.addEventListener("click", boxClick));
 
 function howerText() {
     //remove all hover text
-    boxs.forEach((box) => {
+    boxes.forEach((box) => {
         box.classList.remove("x-hover");
         box.classList.remove("o-hover");
     });
 
     const hoverClass = `${turn.toLowerCase()}-hover`;
 
-    boxs.forEach((box) => {
+    boxes.forEach((box) => {
         if (box.innerText == "") {
             box.classList.add(hoverClass);
         }
@@ -100,7 +100,7 @@ function startNewGame() {
     strike.className = "strike";
     gameOverArea.className = "hidden";
     boardState.fill(null);
-    boxs.forEach((box) => (box.innerText = ""));
+    boxes.forEach((box) => (box.innerText = ""));
     turn = PLAYER_X;
     howerText();
 }
